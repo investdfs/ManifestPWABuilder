@@ -57,6 +57,12 @@ export const downloadPwaKit = async (manifest: Manifest, iconBase64: string | nu
   // 1. Add Manifest
   // Clean up manifest before saving
   const cleanManifest = { ...manifest };
+  
+  // Filter screenshots to remove empty entries
+  if (cleanManifest.screenshots && Array.isArray(cleanManifest.screenshots)) {
+    cleanManifest.screenshots = cleanManifest.screenshots.filter(s => s.src && s.src.trim() !== '');
+  }
+
   // Ensure icons point to local files in the zip structure
   if (iconBase64) {
     cleanManifest.icons = [
