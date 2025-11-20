@@ -1,0 +1,5 @@
+{
+  "name": "PWA Architect Pro",
+  "description": "An expert system for generating perfect, PWABuilder-compliant manifests and AI-generated assets using Gemini 3 Pro.",
+  "requestFramePermissions": []
+}
